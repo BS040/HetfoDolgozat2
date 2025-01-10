@@ -74,8 +74,8 @@ public class VikingLottoGUI extends JFrame {
 
     private void saveDrawnNumbersToDatabase(List<Integer> drawnNumbers) {
         String url = "jdbc:mysql://localhost:3306/VikingLotto";
-        String user = "root"; // Cseréld ki a megfelelő felhasználónévre
-        String password = ""; // Cseréld ki a megfelelő jelszóra
+        String user = "root"; 
+        String password = ""; 
 
         try (Connection conn = DriverManager.getConnection(url, user, password)) {
             String sql = "INSERT INTO DrawnNumbers (number1, number2, number3, number4, number5, number6) "
