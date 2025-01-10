@@ -5,7 +5,6 @@ import java.util.*;
 
 public class VikingLottoImporter {
     public static void main(String[] args) {
-        // Ellenőrzés: Van-e megadott fájl paraméter
         if (args.length != 1) {
             System.out.println("Használat: java VikingLottoImporter <CSV fájl útvonala>");
             return;
@@ -49,8 +48,8 @@ public class VikingLottoImporter {
 
         // Adatok beszúrása adatbázisba
         String url = "jdbc:mysql://localhost:3306/VikingLotto";
-        String user = "root"; // Cseréld ki a megfelelő felhasználónévre
-        String password = ""; // Cseréld ki a megfelelő jelszóra
+        String user = "root";
+        String password = "";
 
         try (Connection conn = DriverManager.getConnection(url, user, password)) {
             String sql = "INSERT INTO ImportedNumbers (number1, number2, number3, number4, number5, number6) "
